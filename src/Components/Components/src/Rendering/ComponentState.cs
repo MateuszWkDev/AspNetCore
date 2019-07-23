@@ -36,8 +36,8 @@ namespace Microsoft.AspNetCore.Components.Rendering
             Component = component ?? throw new ArgumentNullException(nameof(component));
             _renderer = renderer ?? throw new ArgumentNullException(nameof(renderer));
             _cascadingParameters = CascadingParameterState.FindCascadingParameters(this);
-            CurrrentRenderTree = new RenderTreeBuilder(renderer);
-            _renderTreeBuilderPrevious = new RenderTreeBuilder(renderer);
+            CurrrentRenderTree = new RenderTreeBuilder();
+            _renderTreeBuilderPrevious = new RenderTreeBuilder();
 
             if (_cascadingParameters != null)
             {
